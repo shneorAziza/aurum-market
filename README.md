@@ -1,6 +1,6 @@
 # Aurum Market
 
-A full-stack eCommerce platform generated from an AI blueprint. The project includes the final working codebase, the AI orchestration files used to guide generation, and documentation of manual fixes.
+A full-stack eCommerce platform created with the help of AI. The project includes the final working codebase, the AI orchestration files used to guide generation, and documentation of manual fixes.
 
 ## Stack
 
