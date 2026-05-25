@@ -28,6 +28,12 @@ README.md
 
 ## Quick Start
 
+Prerequisites:
+
+- Node.js 18+
+- npm
+- Docker Desktop
+
 1. Install dependencies:
 
 ```bash
@@ -43,10 +49,21 @@ docker compose up -d mysql
 
 The compose file maps MySQL to local port `3307` to avoid collisions with an existing local MySQL installation.
 
+Docker creates:
+
+- Container: `aurum_market_mysql`
+- Database: `aurum_market`
+
 3. Copy backend env:
 
 ```bash
 cp backend/.env.example backend/.env
+```
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item backend/.env.example backend/.env
 ```
 
 4. Seed demo data:
@@ -61,7 +78,7 @@ npm run seed
 npm run dev
 ```
 
-Frontend: `http://localhost:5173`  
+Frontend: `http://127.0.0.1:5173`  
 Backend health check: `http://localhost:4000/health`
 
 Demo login:
@@ -97,6 +114,9 @@ The project was generated and assembled through Codex. Manual human/agent interv
 - Corrected the cart quantity update validation so the backend validates `quantity` from the request body while reading `productId` from the URL.
 - Added an explicit Vite React plugin configuration after browser QA exposed a runtime JSX transform issue.
 - Expanded local CORS handling to allow both `localhost:5173` and `127.0.0.1:5173`, because Vite can advertise either host during local review.
+- Refined the product filter controls so category and sort behave as full clickable controls with clearer dropdown spacing.
+- Aligned product card footers so price and add-to-cart actions remain fixed at the bottom regardless of description length.
+- Improved product copy for clarity and consistency.
 - Chose JavaScript rather than TypeScript because the time-box favored a runnable, reviewable product over extra compile configuration. In a production follow-up, TypeScript would be the preferred upgrade.
 - Wrote explicit README run instructions and demo credentials because AI-generated projects often under-document the reviewer path.
 
